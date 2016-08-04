@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/munialajuela/!svn/ver/138/branches/phase2/phone_campaigns.gc/system/database
+END
+DB_active_rec.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/DB_active_rec.php
+END
+DB_driver.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/DB_driver.php
+END
+DB_result.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/DB_result.php
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/index.html
+END
+DB.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/DB.php
+END
+DB_forge.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/DB_forge.php
+END
+DB_cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/DB_cache.php
+END
+DB_utility.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/DB_utility.php
+END

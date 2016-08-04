@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/munialajuela/!svn/ver/143/branches/phase2/phone_campaigns.gc/application/views/campaigns
+END
+error_create_campaign.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/application/views/campaigns/error_create_campaign.php
+END
+report.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/munialajuela/!svn/ver/142/branches/phase2/phone_campaigns.gc/application/views/campaigns/report.php
+END
+send_sms.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/munialajuela/!svn/ver/142/branches/phase2/phone_campaigns.gc/application/views/campaigns/send_sms.php
+END
+campaign.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/munialajuela/!svn/ver/142/branches/phase2/phone_campaigns.gc/application/views/campaigns/campaign.php
+END
+confirm_create_campaign.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/munialajuela/!svn/ver/142/branches/phase2/phone_campaigns.gc/application/views/campaigns/confirm_create_campaign.php
+END
+confirm_create_sms_campaign.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/munialajuela/!svn/ver/142/branches/phase2/phone_campaigns.gc/application/views/campaigns/confirm_create_sms_campaign.php
+END
+campaigns.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/munialajuela/!svn/ver/143/branches/phase2/phone_campaigns.gc/application/views/campaigns/campaigns.php
+END
+new_campaign.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/munialajuela/!svn/ver/143/branches/phase2/phone_campaigns.gc/application/views/campaigns/new_campaign.php
+END

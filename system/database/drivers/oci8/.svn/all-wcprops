@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/munialajuela/!svn/ver/138/branches/phase2/phone_campaigns.gc/system/database/drivers/oci8
+END
+oci8_driver.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/drivers/oci8/oci8_driver.php
+END
+oci8_result.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/drivers/oci8/oci8_result.php
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/drivers/oci8/index.html
+END
+oci8_forge.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/drivers/oci8/oci8_forge.php
+END
+oci8_utility.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.gc/system/database/drivers/oci8/oci8_utility.php
+END

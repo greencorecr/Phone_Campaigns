@@ -1,0 +1,7 @@
+Requerimientos:
+Necesita PHP <= 5.2.1 para poder ejecutar funciones de JSON Encode
+
+Para actualizar PHP en el CentOS de Elastix se están siguiendo las instrucciones
+de:
+http://www.webtatic.com/packages/php53/
+Nota: Ignorar paquetes de versión 5.3 a como se recomienda en la guía

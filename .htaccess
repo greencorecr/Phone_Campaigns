@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|upload|assets|images|favicon.ico|robots\.txt)
+#RewriteRule ^(.*)$ /phone_campaigns/index.php/$1 [L]
+RewriteRule ^(.*)$ /phase2/phone_campaigns.gc/index.php/$1 [L]
+

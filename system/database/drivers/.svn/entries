@@ -1,0 +1,83 @@
+10
+
+dir
+148
+http://10.42.30.7/svn/munialajuela/branches/phase2/phone_campaigns.gc/system/database/drivers
+http://10.42.30.7/svn/munialajuela
+
+
+
+2011-11-17T05:33:24.906737Z
+138
+jbastias
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+02ee6b2c-afaa-4ddc-95ad-81590356669c
+
+mssql
+dir
+
+sqlite
+dir
+
+oci8
+dir
+
+postgre
+dir
+
+mysql
+dir
+
+odbc
+dir
+
+index.html
+file
+
+
+
+
+2011-11-25T17:24:15.814933Z
+0227cfd904e99656279202032b98d4a7
+2011-02-16T16:53:44.893937Z
+48
+jbastias
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+114
+
+mysqli
+dir
+

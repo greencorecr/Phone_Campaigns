@@ -1,0 +1,89 @@
+10
+
+dir
+148
+http://10.42.30.7/svn/munialajuela/branches/phase2/phone_campaigns.gc/application
+http://10.42.30.7/svn/munialajuela
+
+
+
+2011-11-22T22:43:47.784842Z
+143
+jbastias
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+02ee6b2c-afaa-4ddc-95ad-81590356669c
+
+helpers
+dir
+
+hooks
+dir
+
+language
+dir
+
+models
+dir
+
+config
+dir
+
+controllers
+dir
+
+index.html
+file
+
+
+
+
+2011-11-25T17:24:11.978914Z
+0227cfd904e99656279202032b98d4a7
+2011-01-18T21:47:49.418546Z
+6
+jbastias
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+114
+
+errors
+dir
+
+libraries
+dir
+
+views
+dir
+
