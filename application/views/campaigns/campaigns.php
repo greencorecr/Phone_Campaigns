@@ -1,23 +1,34 @@
 <?php
 //echo '<pre>'.print_r($campaigns, true).'</pre>';
 ?>
-<div id="container">
- <h2>{_menu_campaigns}</h2>
+
+</br></br></br></br>
+<div id="container" class="container">
+  <ol class="breadcrumb">
+    <li><a href="<?=base_url()?>">{_menu_home}</a></li>
+    <li class="active">{_menu_campaigns}</li>
+  </ol>
+
+
 
     <div class="div_buttons">
-        <a href="campaigns/new_campaign">{_button_new}</a>
+        <a href="campaigns/new_campaign"><span class="glyphicon glyphicon-plus"><span></a>
     </div>
-    <div id="div_campaigns" class="main_content">
 
-        <table id="campaigns_table">
+    <div class="panel panel-default">
+    <div class="panel-body">
+
+    <div id="div_campaigns" class="main_content">
+      <div class="table-responsive">
+        <table id="campaigns_table" class="table">
             <thead>
                 <tr>
-                    <th width="5%"></th>
-                    <th width="15%">{_colheading_name}</th>
-                    <th width="10%">{_colheading_priority}</th>
-                    <th width="10%">{_colheading_created}</th>
-                    <th width="10%">{_colheading_status}</th>
-                    <th width="3%">&nbsp;</th>
+                    <th class="text-center" width="5%">{_colheading_type}</th>
+                    <th class="text-center" width="15%">{_colheading_name}</th>
+                    <th class="text-center" width="10%">{_colheading_priority}</th>
+                    <th class="text-center" width="10%">{_colheading_created}</th>
+                    <th class="text-center" width="10%">{_colheading_status}</th>
+                    <th class="text-center" width="3%">&nbsp;</th>
                     <th width="47%">{_colheading_calls_summary}</th>
                 </tr>
             </thead>
@@ -27,15 +38,15 @@
                     $icon = "phoneIcon.png";
                     if($campaign->campaign_type == 'sms') $icon = "mailIcon.png";
                 ?>
-                <tr>
-                    <td>
+                <tr class="success">
+                    <td class="text-center">
                         <img src="<?php echo base_url(); ?>assets/images/<?=$icon?>">
                     </td>
-                    <td><a href="campaigns/campaign/<?=$campaign->id?>"><?=$campaign->name?></a></td>
-                    <td style="text-align: center;"><?=$campaign->priority?></td>
-                    <td><?=date('d/m/y', strtotime($campaign->created))?></td>
-                    <td style="text-align: center;"><?=translate_campaign_status($campaign->status)?></td>
-                    <td>&nbsp;</td>
+                    <td class="text-center"><a href="campaigns/campaign/<?=$campaign->id?>"><?=$campaign->name?></a></td>
+                    <td class="text-center" style="text-align: center;"><?=$campaign->priority?></td>
+                    <td class="text-center"><?=date('d/m/y', strtotime($campaign->created))?></td>
+                    <td class="text-center" style="text-align: center;"><?=translate_campaign_status($campaign->status)?></td>
+                    <td class="text-center">&nbsp;</td>
                     <?php if($campaign->total_calls == 0): ?>
                         <td>{_no_calls}</td>
                     <?php else: ?>
@@ -43,7 +54,7 @@
                         $percent_complete = number_format(100 * ($campaign->num_complete/$campaign->total_calls), 0);
                         $percent_not_complete = 100 - $percent_complete;
                         ?>
-                        <td>
+                        <td class="text-center">
                             <table style="width: 300px; border: solid 0px black; border-collapse: collapse;">
                                 <tr>
                                     <td id="complete" style="padding: 0px; margin: 0px; background-color: red; border: solid 0px black; width: <?=(2*$percent_complete)?>px;"></td>
@@ -56,9 +67,16 @@
                 </tr>
                 <?php endforeach; ?>
             </tbody>
-        </table>
-    </div>
-</div>
+           </table>
+      	  </div>
+    	 </div>
+	</div>
+      
+       </div>
+      </div>
+
+
+
 <script type="text/javascript">
 
 <?php $lang =  $this->config->item('language'); ?>
@@ -110,10 +128,13 @@ function update_active_campaigns(){
 }
 
 $(document).ready(function(){
+    $("#campannas").addClass("active");	
     window.onload = timedRefresh(1000 * 60 * 5); // 5 minutes
-    update_active_campaigns();
+    update_active_campaigns(); 
     $("#campaigns_table tr td:nth-child(4):contains('" + completed + "')").css("color", "red");
 });
 -->
+
+
 </script>
 

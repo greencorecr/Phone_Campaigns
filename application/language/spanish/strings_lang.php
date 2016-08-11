@@ -15,7 +15,7 @@ $lang['_menu_sms_campaigns'] = 'Campañas SMS';
 $lang['_menu_monitor'] = "Monitor";
 $lang['_menu_reports'] = "Reportes";
 
-$lang['_desc_campaigns'] = "Crear y manegar campañas.";
+$lang['_desc_campaigns'] = "Administación y Gestión de Campañas Telefónicas.";
 $lang['_desc_monitor'] = "Monitorear la actividad de las campañas en vivo.";
 $lang['_desc_reports'] = "Generar informes de resumen y detalles.";
 
@@ -29,7 +29,9 @@ $lang['_button_confirm'] = "Confirmar";
 $lang['_button_confirm_and_start'] = "Confirmar y ejecutar";
 $lang['_button_report'] = "Reporte";
 $lang['_button_send_sms'] = "Mandar SMS";
+$lang['_button_go_campaigns'] = "Ir a Campañas"; 
 
+$lang['_colheading_type'] = "Tipo";
 $lang['_colheading_name'] = "Nombre";
 $lang['_colheading_priority'] = "Prioridad";
 $lang['_colheading_created'] = "Creado";
