@@ -29,4 +29,5 @@
   <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
   <META HTTP-EQUIV="Expires" CONTENT="-1">
 </head>
-<body>
+<body style="padding: 0 0 65px;
+    margin: 0;">
