@@ -1,34 +1,39 @@
 <div id="container">
-    <h2>{_title_send_test_sms}</h2>
+    
      <div class="main_content" style='width: 90%; margin: auto;' >
         <div id="campaign_sms_form">
-            <div><?=form_label('{_label_phone_number}: ', 'phone_number');?>
+            <div><h4><?=form_label('{_label_phone_number} ', 'phone_number');?></h4>
                  <?=form_input(array(
                          'name' => 'phone_number'
+                        ,'class' => 'form-control'
                         ,'id' => 'phone_number'
                         ,'length' => '10'
                         ,'size' => '10'
                         ,'value' => set_value('phone_number', $sms_test_phone_number)));?></div><div class="clearfix"></div>
 
-            <div><?=form_label('{_label_amount}: ', 'amount');?>
+            <div><h4><?=form_label('{_label_amount} ', 'amount');?></h4>
                  <?=form_input(array(
                          'name' => 'amount'
                         ,'id' => 'amount'
+                        ,'class' => 'form-control'
                         ,'length' => '6'
                         ,'size' => '6'
                         ,'value' => set_value('amount', '100')));?></div><div class="clearfix"></div>
                         
                         
-            <div><?=form_label('{_label_message}: ', 'message');?>
+            <div><h4><?=form_label('{_label_message} ', 'message');?></h4>
                  <?=form_textarea(array(
                          'name' => 'message'
                         ,'id' => 'message'
+                        ,'class' => 'form-control'
                         ,'rows' => '5'
                         ,'cols' => '50'
                         ,'value' => set_value('message', $sms_test_message)));?></div>
-                        <br /><label></label>*{_sms_message_amount}<div class="clearfix"></div>
-            <div><label></label><div id="errorMessage"></div><div class="clearfix"></div>
-            <div><label></label><?=form_submit(array('name' => 'submit','id' => 'submit','value' => '{_button_submit}'));?></div><div class="clearfix"></div>
+                        <h5>*{_sms_message_amount}</h5><div class="clearfix"></div>
+            <div><label></label><h4><div id="errorMessage"></div></h4><div class="clearfix"></div>
+            <div><label></label>
+            <br />
+            <?=form_submit(array('name' => 'submit','id' => 'submit', 'class' => 'btn btn-success btn-sm', 'style' => 'width: 185px;', 'value' => '{_button_submit}'));?></div><div class="clearfix"></div>
             <label></label><div id="results"></div></div><div class="clearfix"></div>
 
         </div>
@@ -40,6 +45,8 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
+
+        $(".footer").css("display", "none");
         
         $('#cancel').click(function(){
             alert('say what!!!');
@@ -69,6 +76,8 @@
 
             if (!valid) return;
             
+            //var msg = $('#message').val()+" ".replace(' ', $('#amount').val());
+            //alert(msg);
             var msg = $('#message').val().replace('$$$', $('#amount').val());
             
             $.post("ajax_send_sms", { phone_number: $('#phone_number').val(), message: msg },
