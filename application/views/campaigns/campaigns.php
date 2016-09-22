@@ -1,6 +1,4 @@
-<?php
-//echo '<pre>'.print_r($campaigns, true).'</pre>';
-?>
+<?php //echo '<pre>'.print_r($campaigns, true).'</pre>'; ?>
 
 </br></br></br></br>
 <div id="container" class="container">
@@ -9,12 +7,13 @@
     <li class="active">{_menu_campaigns}</li>
   </ol>
 
-
+   
     <div class="div_buttons">
         <a class="btn btn-success btn-sm pull-right" href="campaigns/new_campaign"><span class="glyphicon glyphicon-plus"> {_button_new}<span></a>
     </div>
     </br></br>
-
+    
+    <div class="jumbotron">  
     <div class="panel panel-default">
     <div class="panel-body">
 
@@ -70,10 +69,10 @@
            </table>
       	  </div>
     	 </div>
-	</div>
-      
-       </div>
+	    </div>
+       </div> 
       </div>
+     </div>
 
 
 
