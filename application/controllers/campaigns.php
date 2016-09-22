@@ -198,8 +198,7 @@ class Campaigns extends CI_Controller {
             
             
             //print_r($_POST);
-            //exit();
-            
+            //exit();            
             
             $data = get_strings();
 
