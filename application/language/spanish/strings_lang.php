@@ -68,6 +68,7 @@ $lang['_campaign_label_priority'] = "Prioridad";
 $lang['_campaign_label_file'] = "Archivo";
 $lang['_campaign_label_created'] = "Creado";
 $lang['_campaign_label_use_amount'] = "¿Utiliza monto?";
+$lang['_campaign_label_time'] = "Ejecución de Campaña";
 
 $lang['_campaign_label_date_range'] = "Rango de fechas";
 $lang['_campaign_label_time_range'] = "Rango de horas";
