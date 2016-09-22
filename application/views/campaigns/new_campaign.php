@@ -6,7 +6,7 @@
     <li><a href="<?=base_url()?>">{_menu_home}</a></li>
     <li><a href="<?=base_url()?>campaigns">{_menu_campaigns}</a></li>
     <li class="active">{_title_new_campaign}</li>
-  </ol>
+    </ol>
 
     <div class="jumbotron">  
     <div class="panel panel-default">
@@ -66,9 +66,6 @@
         </center>
         <!-- radio button -->
 
-        <div class="clearfix"></div></br>
-
-
         <!-- labels & inputs -->
 
         <!-- siempre visibles -->
@@ -78,6 +75,42 @@
         'type'=>'text', 'name' => 'name', 'value' => '', 'class' => 'form-control', 'placeholder' => "Nombre de Campaña"));?>
         <div class="clearfix"></div>
 
+
+        <!-- checked para hacer campannas now -->
+        <center>
+        <h4><?=form_label('{_campaign_label_time} ', 'campaign_time');?></h4>
+
+
+        <label class="radio-inline">
+         <?=form_radio(array(
+            'id' => 'campaign_time'
+           ,'name' => 'campaign_time'
+           ,'value' => "later"
+           ,'checked' => 'checked'));
+        ?> 
+       Campaña Programada
+       </label>
+
+        <label class="radio-inline">
+        <?=form_radio(array(
+            'id' => 'campaign_time'
+           ,'name' => 'campaign_time'
+           ,'value' => 'now'));
+        ?>         
+        Campaña Inmediata
+        </label>
+        </center>
+
+        <!-- checked para hacer campannas now -->
+
+
+        <!-- input type=hidden para validar si la campanna es inmediata o no -->
+        <?=form_input(array('type'=>'hidden', 'name' => 'now', 'value' => 'later', 'id' => 'now'));?>
+        <!-- input type=hidden para validar si la campanna es inmediata o no -->
+
+
+        <!--  se va a ocultar dependiendo de si la campanna a crear es inmediata o no  -->
+        <div id="date_select"> 
         <!-- datepicker date_start -->
         <h4><?=form_label('{_campaign_label_start} ', 'date_start');?></h4>
         
@@ -138,10 +171,13 @@
         </center>
         <div class="clearfix"></div>
         <!-- select hour_end -->  
-        <!-- siempre visibles -->                    
-          
+        <!-- siempre visibles -->  
+
+        </div><!-- div de cierre de la programacion de las campannas (fechas) -->
+
+       
      
-         <!-- siempre visibles -->        
+        <!-- siempre visibles -->        
         <h4><?=form_label('{_campaign_label_priority} ', 'priority');?></h4>
         <?=form_input('priority', set_value('priority', $default_priority), 'class="form-control"');?></div><div class="clearfix"></div>
         
@@ -171,14 +207,16 @@
 
         
 
+
              
-        <!-- seccion de SMS / se oculta y se dibuja por default oculto -->                        
+        <!-- seccion de SMS / se oculta y se dibuja por default oculto -->      
         <div id="sms_campaign" style="display: none;">
         
-            <div class="div_labels"><?=form_label('{_campaign_label_sms_message}: ', 'sms_message');?></div>
+            <div class="div_labels"><h4><?=form_label('{_campaign_label_sms_message}: ', 'sms_message');?></h4></div>
             <div class="div_inputs"><?=form_textarea(array(
                      'name' => 'sms_message'
                     ,'id' => 'sms_message'
+                    ,'class' => 'form-control'
                     ,'rows' => '3'
                     ,'cols' => '55'
                     ,'value' => set_value('sms_message', '')));?>
@@ -189,6 +227,10 @@
         <!-- seccion de SMS / se oculta y se dibuja -->
 
        
+
+        <!-- boton oculto para tirar modal archivo -->
+        <button type="button" id="btn_modal_archivo" style="display:none;" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"></button>
+        <!-- boton oculto para tirar modal archivo -->
 
         <!-- siempre visibles -->
         <h4><?=form_label('{_campaign_label_file} ', 'userfile');?> <img id="question" style="display:inline;" src="<?php echo base_url(); ?>assets/images/question_mark_icon.gif"></h4>
@@ -225,26 +267,66 @@
 </div> <!-- fin de container -->
 
 <!-- modal de sugerencia del archivo a subir -->
-<div id="basic-modal-content">
-    <h1>{_popup_title}</h1>
-    <p>{_popup_content}</p>
-    {_sample_csv}:<br />
-    <div style="background-color: #eeeeee; color: #000000; border: solid 1px black;">
-    <pre>
-    "87651234", "2310.95"
-    "88773344", "223105.07"
-    ...
-    </pre>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+        <div class="alert alert-success">
+        <strong>¡Ejemplo Para Subir Archivo!</strong></div>
+        </div>
+        <div class="modal-body">
+
+
+        <p>{_popup_content}</p>
+        {_sample_csv}:<br />
+        <pre>
+                      "87651234", "2310.95"
+                      "88773344", "223105.07"
+                      ...
+        </pre>           
+        {_sample_xls}:<br />
+
+        <pre><center><img src="<?php echo base_url(); ?>assets/images/sample_excel.jpg"></center></pre>
+        </div>       
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
     </div>
-    {_sample_xls}:<br />
-    <img src="<?php echo base_url(); ?>assets/images/sample_excel.jpg">
-</div>
+  </div>
 <!-- modal de sugerencia del archivo a subir -->
 
 
 <!-- modal del mesaje de prueba hace llamada a una vista para mostrar mediante un iframe-->
+
+<!-- boton oculto para tirar modal archivo -->
+<button type="button" id="btn_modal_test" style="display:none;" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalTest"></button>
+<!-- boton oculto para tirar modal archivo -->
+
+<div class="modal fade" id="myModalTest" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+        <div class="alert alert-success">
+        <strong>¡{_title_send_test_sms}!</strong></div>
+        </div>
+        <div class="modal-body">
+        <iframe class="embed-responsive-item" src="<?php echo base_url(); ?>campaigns/send_sms" style='width: 100%; height: 500px; border:0px;'></iframe> 
+        </div>       
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 <div id="send_test_sms_message">
-    <iframe src="<?php echo base_url(); ?>campaigns/send_sms" style='width: 100%; height: 350px;'></iframe> 
+    <iframe src="<?php echo base_url(); ?>campaigns/send_sms" style='width: 100%; height: 450px;'></iframe> 
 </div>
 <!-- modal del mesaje de prueba hace llamada a una vista para mostrar mediante un iframe-->
 
@@ -261,21 +343,39 @@
 
 var initPage = function(){
     var campaign_type = 'phn';
+    var campaign_time = 'later';
     var recording2 = null;
     <?php
         if(isset($_POST['campaign_type']))
             echo 'campaign_type = \''.$_POST['campaign_type'].'\';'."\n";
+
+        if(isset($_POST['campaign_time']))
+            echo 'campaign_time = \''.$_POST['campaign_time'].'\';'."\n";
+
         if(isset($_POST['recording2']) && $_POST['recording2'] )
             echo "recording2 = 'show';\n";
     ?>
+
     if(campaign_type == 'sms'){
         $('input[name=campaign_type][value=sms]').attr('checked', 'checked');
     }
+
+    if(campaign_time == 'now'){
+        $('input[name=campaign_time][value=now]').attr('checked', 'checked');
+    }
+
     if($('input[type=radio]:checked').val() == 'sms') show_sms();
+
+    if($('input:radio[name=campaign_time]:checked').val() == 'now') {
+         $("#date_select").css("display", "none");
+         $("#now").val("now");
+    }
     
     if(recording2){
         $('#showRecording2').trigger('click');
     }
+
+
     
 }
 
@@ -298,6 +398,9 @@ $(document).ready(function(){
     // datapicker
     $("#date_start").dateinput();
     $("#date_end").dateinput();
+
+    $("#date_start_now").dateinput();
+    $("#date_end_now").dateinput();
 
     //idioma español para el datepicker
     $.fn.datepicker.dates['es'] = {
@@ -330,15 +433,18 @@ $(document).ready(function(){
     });
     // datapicker
 
-    // hace submit dependiendo del tipo de campaña 
-    $('#submit').click(function(){
+
+    // hace submit dependiendo del tipo de campaña  
+    $('#submit').click(function(){ // setear el action dependiendo de si es now la campaña
         var $form = $('form:first');
         var $action = $form.attr('action');
         var $type = $('#campaign_type:checked').val();
         if($type == 'sms'){
             if(!$action.match('_sms$')) $action += '_sms';
         } else {
+          if($type == 'phn'){
             $action = $action.replace('_sms', '');
+        }
         }
         $form.attr('action', $action);
     });
@@ -353,8 +459,10 @@ $(document).ready(function(){
            $(this).css("cursor", "default");
         }
      ).click(function(){
-        $('#basic-modal-content').modal();
+        //$('#basic-modal-content').modal();
+        jQuery(function(){ jQuery("#btn_modal_archivo").click(); }); 
         return false;
+        
     });
     // hace visible/oculta la modal de la sugerencia del archivo
 
@@ -367,7 +475,8 @@ $(document).ready(function(){
            $(this).css("cursor", "default");
         }
      ).click(function(){
-        $('#send_test_sms_message').modal();
+        //$('#send_test_sms_message').modal();
+        jQuery(function(){ jQuery("#btn_modal_test").click(); }); 
         return false;
     });
     // hace visible/oculta la modal de la prueba del envio SMS
@@ -435,11 +544,33 @@ $(document).ready(function(){
         var $this = $(this);
         if($this.val() == 'sms'){
             show_sms();
-        } else {
+        } 
+        else {
+        if($this.val() == 'phn'){
             show_phn();
         }
+      }
     });
     // hace visible/oculta la parte de SMS y llamadas
+
+
+    // hace visible/oculta la parte de la programacion de las fechas en caso de ser una campanna inmediata
+     $('input[type=radio]').click(function(){
+        var $this = $(this);
+        if($this.val() == 'later'){
+            $("#date_select").css("display", "");
+            $("#now").val("");
+        } 
+        else {
+        if($this.val() == 'now'){
+            $("#date_select").css("display", "none");
+            $("#now").val("now");
+            //$this.attr('checked', 'checked');
+        }
+      }
+    });
+    // hace visible/oculta la parte de la programacion de las fechas en caso de ser una campanna inmediata
+
 
 
     initPage(); 
