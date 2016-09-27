@@ -970,6 +970,30 @@ class CI_Form_validation {
 	// --------------------------------------------------------------------
 
 	/**
+	 * Range
+	 *
+	 * @access	public
+	 * @param	string
+	 * @param	value
+	 * @return	bool
+	 */
+
+	function range($str){
+
+		if ( $str < 10 && $str > 0)
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
+
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
 	 * Max Length
 	 *
 	 * @access	public
