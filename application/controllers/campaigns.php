@@ -127,17 +127,17 @@ class Campaigns extends CI_Controller {
             
             
             // field name, error message, validation rules
-            $this->form_validation->set_rules('name', 'Campaign name', 'trim|required');
-            $this->form_validation->set_rules('date_start', 'Start date', 'required');
-            $this->form_validation->set_rules('date_end', 'End date', 'required');
-            $this->form_validation->set_rules('day_start_hour', 'Start time hours', 'required');
-            $this->form_validation->set_rules('day_start_min', 'Start time minutes', 'required');
-            $this->form_validation->set_rules('day_end_hour', 'End time hours', 'required');
-            $this->form_validation->set_rules('day_end_min', 'End time minutes', 'required');
-            $this->form_validation->set_rules('retries', 'Retries', 'trim|required|integer');
-            $this->form_validation->set_rules('recording', 'Recording', 'required');
+            $this->form_validation->set_rules('name', '"Nombre de la Campaña"', 'trim|required');
+            $this->form_validation->set_rules('date_start', '"Fecha de Inicio"', 'required');
+            $this->form_validation->set_rules('date_end', '"Fecha de Finalización"', 'required');
+            $this->form_validation->set_rules('day_start_hour', '"Hora de Inicio"', 'required');
+            $this->form_validation->set_rules('day_start_min', '"Minutos de Inicio"', 'required');
+            $this->form_validation->set_rules('day_end_hour', '"Hora De Finalización"', 'required');
+            $this->form_validation->set_rules('day_end_min', '"Minutos de Finalización"', 'required');
+            $this->form_validation->set_rules('retries', '"Intentos"', 'trim|required|integer');
+            $this->form_validation->set_rules('recording', '"Grabación"', 'required');
             //$this->form_validation->set_rules('userfile', 'File name', 'trim|required');
-            $this->form_validation->set_rules('priority', 'Priority', 'trim|required|integer|range');
+            $this->form_validation->set_rules('priority', '"Prioridad"', 'trim|required|integer|range');
             $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
             $validated = $this->form_validation->run();
@@ -163,7 +163,7 @@ class Campaigns extends CI_Controller {
             }
             else
             {
-                $data['errors'] = 'You must select a file (excel or cvs).';
+                $data['errors'] = 'Usted debe seleccionar un archivo (excel or cvs).';
             }
 
             if(!($validated && $upload_validated))
@@ -179,9 +179,9 @@ class Campaigns extends CI_Controller {
             $_POST['day_start_hour'] = '00';
             $_POST['day_end_hour'] = '23';
             $_POST['day_end_min'] = '59';
-            $fecha = date('dd-mm-yy');
-            $nuevafecha = strtotime('+0 day',strtotime($fecha));
-            $nuevafecha = date('m-d-y',$nuevafecha);
+            $fecha = date('Y-m-j');
+            $nuevafecha = strtotime ( '+1 day' , strtotime ( $fecha ) ) ;
+            $nuevafecha = date ( 'm-j-y' , $nuevafecha );
             $nuevafecha = str_replace("-", "/", $nuevafecha);
 
             $_POST['date_end'] = $nuevafecha;
@@ -237,7 +237,7 @@ class Campaigns extends CI_Controller {
             }
             else
             {
-                $data['errors'] = 'You must select a file (excel or cvs).';
+                $data['errors'] = 'Usted debe seleccionar un archivo (excel or cvs).';
             }
 
             if(!($validated && $upload_validated))
@@ -251,13 +251,13 @@ class Campaigns extends CI_Controller {
             $this->session->set_flashdata('post_data', $_POST);
 
             if($_POST['now']=="now"){
-            $_POST['day_start_hour'] = '01';
+            $_POST['day_start_hour'] = '00';
             $_POST['day_end_hour'] = '23';
             $_POST['day_end_min'] = '59';
 
-            $fecha = date('dd-mm-yy');
-            $nuevafecha = strtotime('+0 day',strtotime($fecha));
-            $nuevafecha = date('m-d-y',$nuevafecha);
+            $fecha = date('Y-m-j');
+            $nuevafecha = strtotime ( '+1 day' , strtotime ( $fecha ) ) ;
+            $nuevafecha = date ( 'm-d-y' , $nuevafecha );
             $nuevafecha = str_replace("-", "/", $nuevafecha);
 
             $_POST['date_end'] = $nuevafecha;
@@ -647,12 +647,16 @@ class Campaigns extends CI_Controller {
             system("chmod 644 ".$tmpfname);
             system("sudo mv ".$tmpfname.' /var/spool/sms/outgoing/'.str_replace('/tmp/', '', $tmpfname));
                                 
+            
             header("content-type: application/json");
             $result = new stdClass();
             $result->phone = isset($_POST['phone_number']) ? $_POST['phone_number'] : '';
             $result->msg = isset($_POST['message']) ? $_POST['message'] : '';
             $result->file_contents = $call_file;
+
             echo json_encode($result);
+
+
         }
 
 }
