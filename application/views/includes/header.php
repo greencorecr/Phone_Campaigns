@@ -21,7 +21,13 @@
 <script src="<?php echo base_url(); ?>assets/css/bootstrap/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/dateinput.css" type="text/css" media="screen" /> 
 
-
+<!-- Para datatable -->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/datatable/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/datatable/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/datatable/buttons.html5.min.js"></script>
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/datatable/jquery.dataTables.min.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/datatable/buttons.dataTables.min.css" type="text/css" media="screen" />
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/datatable/vfs_fonts.js"></script>
 
 
   <link rel="shortcut icon" href="<?php echo base_url(); ?>favicon.ico" />
