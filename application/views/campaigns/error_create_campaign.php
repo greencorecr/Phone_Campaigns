@@ -1,7 +1,7 @@
-
+<br><br><br>
 <div id="container">
-
-    <h2>{_title_new_campaign}</h2>
+<center>
+    <h2>Error al Crear {_title_new_campaign}</h2>
 
      <div class="main_content">
 
@@ -14,12 +14,12 @@
                  <br />
                  
              </div>
-         </div>
-                 <a href="new_campaign">{_new_campaign}</a>
+         </div><br />
+                 <a href="new_campaign">Ir Nueva Campaña </a>
                  &nbsp;&nbsp;&nbsp;
-                 <a href="../campaigns">{_campaigns}</a>
+                 <a href="../campaigns">Ir Campañas</a>
 
 
      </div>
-
+</center>
 </div>
