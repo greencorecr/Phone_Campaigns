@@ -30,7 +30,7 @@
         <div class="modal-body">'.validation_errors().' <div class="error">'.$errors.'</div>          
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
@@ -204,7 +204,6 @@
 
         </div>
         <!-- seccion de llamadas / se oculta y se dibuja -->
-
         
 
 
@@ -212,7 +211,7 @@
         <!-- seccion de SMS / se oculta y se dibuja por default oculto -->      
         <div id="sms_campaign" style="display: none;">
         
-            <div class="div_labels"><h4><?=form_label('{_campaign_label_sms_message}: ', 'sms_message');?></h4></div>
+            <div class="div_labels"><h4><?=form_label('{_campaign_label_sms_message}', 'sms_message');?><img id="question_sms" style="margin-left:0.5%;" src="<?php echo base_url(); ?>assets/images/question_mark_icon.gif"></h4></div>
             <div class="div_inputs"><?=form_textarea(array(
                      'name' => 'sms_message'
                     ,'id' => 'sms_message'
@@ -228,9 +227,10 @@
 
        
 
-        <!-- boton oculto para tirar modal archivo -->
+        <!-- boton oculto para tirar modal archivo y modal ejemplo de sms -->
         <button type="button" id="btn_modal_archivo" style="display:none;" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"></button>
-        <!-- boton oculto para tirar modal archivo -->
+        <button type="button" id="btn_modal_sms" style="display:none;" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalMoney"></button>
+        <!-- boton oculto para tirar modal archivo y modal ejemplo de sms -->
 
         <!-- siempre visibles -->
         <h4><?=form_label('{_campaign_label_file} ', 'userfile');?> <img id="question" style="display:inline;" src="<?php echo base_url(); ?>assets/images/question_mark_icon.gif"></h4>
@@ -266,13 +266,42 @@
 </div> <!-- fin jumbotron -->
 </div> <!-- fin de container -->
 
+<!-- modal de sugerencia para poner el monto en el mensaje de texto -->
+<div class="modal fade" id="myModalMoney" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+        <div class="alert alert-info">
+        <strong>¡Ejemplo Para Incluir Monto en el SMS!</strong></div>
+        </div>
+        <div class="modal-body">
+
+
+        <p>Para asignar el monto dentro del mensaje es necesario que utilice tres (3) signos de dolar consecutivos donde 
+            desee establecerlo de la siguiente manera.</p>
+        Ejemplo:<br /><br />
+        <pre>Buenos Días, se le comunica que el monto que 
+adeuda es de: $$$ colones. Gracias.</pre>           
+       
+        </div>       
+
+        <div class="modal-footer">
+           <p style="float:left;"><strong>Nota:</strong> El monto es leído del archivo.</p>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- modal de sugerencia para poner el monto en el mensaje de texto -->
+
 <!-- modal de sugerencia del archivo a subir -->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           
-        <div class="alert alert-success">
+        <div class="alert alert-info">
         <strong>¡Ejemplo Para Subir Archivo!</strong></div>
         </div>
         <div class="modal-body">
@@ -281,8 +310,8 @@
         <p>{_popup_content}</p>
         {_sample_csv}:<br />
         <pre>
-                      "87651234", "2310.95"
-                      "88773344", "223105.07"
+                      87651234,2310.95
+                      88773344,223105.07
                       ...
         </pre>           
         {_sample_xls}:<br />
@@ -308,16 +337,12 @@
 <div class="modal fade" id="myModalTest" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          
-        <div class="alert alert-success">
-        <strong>¡{_title_send_test_sms}!</strong></div>
-        </div>
+        
         <div class="modal-body">
         <iframe class="embed-responsive-item" src="<?php echo base_url(); ?>campaigns/send_sms" style='width: 100%; height: 500px; border:0px;'></iframe> 
         </div>       
 
-        <div class="modal-footer">
+        <div class="modal-footer">  
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
@@ -395,6 +420,9 @@ var show_phn = function(){
 
 $(document).ready(function(){
 
+    //activar la clase del nav "Nueva Campaña"
+    $("#nuevo").addClass("active"); 
+
     // datapicker
     $("#date_start").dateinput();
     $("#date_end").dateinput();
@@ -461,6 +489,21 @@ $(document).ready(function(){
      ).click(function(){
         //$('#basic-modal-content').modal();
         jQuery(function(){ jQuery("#btn_modal_archivo").click(); }); 
+        return false;
+        
+    });
+    // hace visible/oculta la modal de la sugerencia del archivo
+
+    // hace visible la modal y viseversa de la sugerencia del archivo
+    $('#question_sms').hover(function(){
+           $(this).css("cursor", "pointer"); 
+        },
+        function(){
+           $(this).css("cursor", "default");
+        }
+     ).click(function(){
+        //$('#basic-modal-content').modal();
+        jQuery(function(){ jQuery("#btn_modal_sms").click(); }); 
         return false;
         
     });
@@ -570,6 +613,7 @@ $(document).ready(function(){
       }
     });
     // hace visible/oculta la parte de la programacion de las fechas en caso de ser una campanna inmediata
+
 
 
 
