@@ -21,7 +21,7 @@ aria-expanded="false">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand" href="<?=base_url()?>">Campañas Telefónicas</a>
+        <a class="navbar-brand" href="<?=base_url()?>"><img style="margin-top: -4%" src="<?=base_url()?>/assets/images/greencore.png" width="200px" height="30px"></a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -29,6 +29,7 @@ aria-expanded="false">
           <li id="inicio"><a href="<?=base_url()?>" <?php echo $root == '' ? 'id="current"' : ''?>>{_menu_home}</a></li>
           <li id="campannas"><a href="<?=base_url()?>campaigns" <?php echo stripos($root, 'campaigns') === 0 ? 'id="current"' :
 ''?>>{_menu_campaigns}</a></li>
+          <li id="nuevo"><a href="<?=base_url()?>campaigns/new_campaign">Nueva Campaña</a></li> 
         </ul>
       </div>
     </div>
