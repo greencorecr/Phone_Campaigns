@@ -1,6 +1,7 @@
 <?php //echo '<pre>'.print_r($campaign, true).'</pre>';?>
 
 </br></br></br></br>
+
 <div id="container" class="container">
   <ol class="breadcrumb">
     <li><a href="<?=base_url()?>">{_menu_home}</a></li>
@@ -28,7 +29,7 @@
         <?php if($campaign->status === 'paused' || $campaign->status === 'pending' || $campaign->status === 'running'): ?>
             <a style="text-decoration: none;" href="../cancel/<?=$campaign->id?>"><img src="<?php echo base_url(); ?>assets/images/back.png" title="{_button_cancel}" class="img-rounded"><span> Cancelar</span></a>
         <?php endif; ?>
-        <?php if($campaign->status === 'paused' || $campaign->status === 'pending'  || $campaign->status === 'completed'): ?>
+        <?php if($campaign->status === 'paused' || $campaign->status === 'pending'  || $campaign->status === 'completed' || $campaign->status === 'cancelled'): ?>
 
 
         <a href="" style="text-decoration: none;" data-toggle="modal" data-target="#confirm-delete"><img src="<?php echo base_url(); ?>assets/images/delete.png" title="{_button_delete}" class="img-rounded"> <span> Eliminar</span></a>
@@ -49,8 +50,6 @@
         </div>          
               
         <?php endif; ?>
-
-
 
     </div>
 
