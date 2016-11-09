@@ -1,0 +1,17 @@
+Channel: SIP/[number]
+MaxRetries: 0
+Context: outbound-campaign
+Extension: [campaign]
+Priority: 1
+
+
+
+
+Channel: DAHDI/g0/[number]
+MaxRetries: 0
+Context: outbound-campaign
+Extension: [campaign]
+Priority: 1
+
+
+

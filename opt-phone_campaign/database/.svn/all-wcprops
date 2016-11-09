@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/munialajuela/!svn/ver/145/branches/phase2/phone_campaigns.d/database
+END
+abstract_dal.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.d/database/abstract_dal.php
+END
+db_calls.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/munialajuela/!svn/ver/142/branches/phase2/phone_campaigns.d/database/db_calls.php
+END
+db_campaign.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/munialajuela/!svn/ver/145/branches/phase2/phone_campaigns.d/database/db_campaign.php
+END
+enums.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/munialajuela/!svn/ver/142/branches/phase2/phone_campaigns.d/database/enums.php
+END
