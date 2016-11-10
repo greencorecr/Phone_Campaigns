@@ -442,7 +442,12 @@ class Campaigns extends CI_Controller {
                  redirect('campaigns/error_creating_campaign');
             }
             $this->_create_campaign($upload_data['file_name'], $post_data, $run);
-            system("sudo su - asterisk -c 'sudo php /opt/phone_campaign/phone_campaigns_daemon.php > /dev/null &'");
+
+            // comando para ejecutar el demonio de una vez creada una campaña de mensajes / es necesario moverse a la ruta de /var/lib/asterisk 
+            // debido a que de lo contrario presenta un error php
+            // el phone_campaigns_daemon.php lo necesita ejecutar el usuario asterisk. La salida del demonio se manda a /dev/null para
+            // que no se interrumpa la ejecución del sistema    
+            system("cd /var/lib/asterisk; sudo php /opt/phone_campaign/phone_campaigns_daemon.php > /dev/null &");
             redirect('campaigns');
 
         }
@@ -457,10 +462,7 @@ class Campaigns extends CI_Controller {
             }
             $this->_create_sms_campaign($upload_data['file_name'], $post_data, $run);
 
-            // comando para ejecutar el demonio de una vez creada una campaña de mensajes / "sudo su - asterisk es necesario debido a que 
-            // el phone_campaigns_daemon.php lo necesita ejecutar el usuario asterisk. La salida del demonio se manda a /dev/null para
-            // que no se interrumpa la ejecución del sistema    
-            //system("sudo su - asterisk -c 'sudo php /opt/phone_campaign/phone_campaigns_daemon.php > /dev/null &'");
+          
             redirect('campaigns');
             
         }
@@ -475,10 +477,11 @@ class Campaigns extends CI_Controller {
             }
             $this->_create_sms_campaign($upload_data['file_name'], $post_data, $run);
 
-            // comando para ejecutar el demonio de una vez creada una campaña de mensajes / "sudo su - asterisk es necesario debido a que 
+             // comando para ejecutar el demonio de una vez creada una campaña de mensajes / es necesario moverse a la ruta de /var/lib/asterisk 
+            // debido a que de lo contrario presenta un error php
             // el phone_campaigns_daemon.php lo necesita ejecutar el usuario asterisk. La salida del demonio se manda a /dev/null para
             // que no se interrumpa la ejecución del sistema    
-            system("sudo su - asterisk -c 'sudo php /opt/phone_campaign/phone_campaigns_daemon.php > /dev/null &'");
+            system("cd /var/lib/asterisk; sudo php /opt/phone_campaign/phone_campaigns_daemon.php > /dev/null &");
             redirect('campaigns');
             
         }
@@ -646,7 +649,6 @@ class Campaigns extends CI_Controller {
             //system ejecuta comandos de Linux mediante PHP
             system("chmod 644 ".$tmpfname);
             system("sudo mv ".$tmpfname.' /var/spool/sms/outgoing/'.str_replace('/tmp/', '', $tmpfname));
-                                
             
             header("content-type: application/json");
             $result = new stdClass();
