@@ -163,7 +163,6 @@ class sms_campaign_manager
         if(!chown($tmpfname, 'asterisk')) return null;
         if(!chgrp($tmpfname, 'asterisk')) return null;
         touch($tmpfname, time() + 1);
-	chmod($tmpfname, 0666);
 
         // mv the file to outgoing directory
         if(rename($tmpfname, $this->config['sms_outgoing_dir'].'/'.$filename))

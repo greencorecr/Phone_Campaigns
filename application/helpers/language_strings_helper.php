@@ -56,6 +56,7 @@ if ( ! function_exists('translate_call_status'))
             'retry' => 'reintentar',
             'failed' => 'fallida',
             'congested' => 'congestionado',
+            'sent' => 'Enviado' 
             );
 
         if($lang == 'spanish')

@@ -179,7 +179,7 @@ class CI_Upload {
 					$this->set_error('upload_no_temp_directory');
 					break;
 				case 7: // UPLOAD_ERR_CANT_WRITE
-					$this->set_error('upload_unable_to_write_file');
+					$this->set_error('upload_unable_to_write_file gg');
 					break;
 				case 8: // UPLOAD_ERR_EXTENSION
 					$this->set_error('upload_stopped_by_extension');

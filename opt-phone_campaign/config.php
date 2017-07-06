@@ -25,13 +25,13 @@ $config = array(
     /* database setting */
     'db_user' => 'root',
 //    'db_password' => 'dbtoor',
-    'db_password' => 'eiN4damuaeQuin4u',
+    'db_password' => 'greencore',
     'db_name' => 'phone_campaigns',
     'db_host' => 'localhost',
     
     'db_code_path' =>  dirname(__FILE__).'/database',
     'iteration_sleep' => 10,
-    'callerid' => '"GCS" <22571015>',
+    'callerid' => '"muni" <24362300>',
     'hours_between_retries' => 1,
     'max_active_calls' => 15,
   

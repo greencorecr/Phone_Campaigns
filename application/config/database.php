@@ -45,7 +45,7 @@ if (DEVELOPMENT) {
 } else {
     $db['default']['hostname'] = "localhost";
     $db['default']['username'] = "root";
-    $db['default']['password'] = "greencore";
+    $db['default']['password'] = "eiN4damuaeQuin4u";
     $db['default']['database'] = "phone_campaigns";
 }    
 

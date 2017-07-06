@@ -362,8 +362,8 @@ $config['default_max_retries'] = 3;
 $config['default_priority'] = 1;
 
 // test sms message
-$config['sms_test_phone_number'] = '87133484';
-$config['sms_test_message'] = 'pruebua!!!!';
+$config['sms_test_phone_number'] = '83150702';
+$config['sms_test_message'] = 'Monto a pagar de: $$$ colones. Gracias. (Mensaje de Prueba)';
 
 
 $config['calls_insert_batch_size'] = 50;

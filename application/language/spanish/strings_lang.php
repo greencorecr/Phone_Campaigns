@@ -15,7 +15,7 @@ $lang['_menu_sms_campaigns'] = 'Campañas SMS';
 $lang['_menu_monitor'] = "Monitor";
 $lang['_menu_reports'] = "Reportes";
 
-$lang['_desc_campaigns'] = "Crear y manegar campañas.";
+$lang['_desc_campaigns'] = "Administación y Gestión de Campañas Telefónicas y Mensajería.";
 $lang['_desc_monitor'] = "Monitorear la actividad de las campañas en vivo.";
 $lang['_desc_reports'] = "Generar informes de resumen y detalles.";
 
@@ -29,7 +29,9 @@ $lang['_button_confirm'] = "Confirmar";
 $lang['_button_confirm_and_start'] = "Confirmar y ejecutar";
 $lang['_button_report'] = "Reporte";
 $lang['_button_send_sms'] = "Mandar SMS";
+$lang['_button_go_campaigns'] = "Ir a Campañas"; 
 
+$lang['_colheading_type'] = "Tipo";
 $lang['_colheading_name'] = "Nombre";
 $lang['_colheading_priority'] = "Prioridad";
 $lang['_colheading_created'] = "Creado";
@@ -66,6 +68,7 @@ $lang['_campaign_label_priority'] = "Prioridad";
 $lang['_campaign_label_file'] = "Archivo";
 $lang['_campaign_label_created'] = "Creado";
 $lang['_campaign_label_use_amount'] = "¿Utiliza monto?";
+$lang['_campaign_label_time'] = "Ejecución de Campaña";
 
 $lang['_campaign_label_date_range'] = "Rango de fechas";
 $lang['_campaign_label_time_range'] = "Rango de horas";
@@ -98,7 +101,7 @@ $lang['_error_invalid_phone_digits'] = 'dígitos de teléfono inválidos';
 $lang['_error_invalid_amount'] = 'monto inválido';
 
 $lang['_errors'] = 'errores';
-$lang['_data'] = 'telefone informacion valida';
+$lang['_data'] = 'Información Válida del Archivo';
 $lang['_no_calls'] = 'No hay llamadas';
 $lang['_error_could_not_create_campaign'] = 'La campaña no pudo ser creada.<br /> Por favor intente otra vez.';
 
@@ -107,7 +110,7 @@ $lang['_campaigns'] = 'campañas';
 
 $lang['_use_amount'] = 'Usar Monto';
 
-$lang['_label_phone_number'] = 'Numero de Telefono'; 
+$lang['_label_phone_number'] = 'Número de Telefono'; 
 $lang['_label_message'] = 'Mensaje';
 
 $lang['_split_campaign_warning'] = 'El numero de llamadas es demasiado grande para esta campaña. ¿Quiere dividir la campaña en trozos mas pequeños de [batch_size]?';

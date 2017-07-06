@@ -17,3 +17,4 @@ $lang['integer'] = 'El campo %s debe contener un n';
 $lang['matches'] = 'El campo %s no coincide con el campo %s.';
 $lang['is_natural'] = 'El campo %s debe contener s';
 $lang['is_natural_no_zero'] = 'El campo %s debe contener un n';
+$lang['range'] = 'El campo %s debe ser entre 1-9';
