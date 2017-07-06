@@ -1,0 +1,9 @@
+Channel: DAHDI/g0/[number]
+CallerID: [callerid]
+MaxRetries: 0
+Context: outbound-campaign
+Extension: s
+Priority: 1
+Set: campaign_id=[campaign_id]
+Set: call_id=[call_id]
+Set: number=[number]

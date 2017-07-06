@@ -1,0 +1,2 @@
+Requerimientos:
+Necesita php-posix, el cual en CentOS es llamado php-process

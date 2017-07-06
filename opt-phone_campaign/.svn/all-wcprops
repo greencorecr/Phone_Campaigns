@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/munialajuela/!svn/ver/147/branches/phase2/phone_campaigns.d
+END
+campaign_manager.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/munialajuela/!svn/ver/144/branches/phase2/phone_campaigns.d/campaign_manager.php
+END
+KLogger.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.d/KLogger.php
+END
+test_driver.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/munialajuela/!svn/ver/144/branches/phase2/phone_campaigns.d/test_driver.php
+END
+sms_campaign_manager.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/munialajuela/!svn/ver/145/branches/phase2/phone_campaigns.d/sms_campaign_manager.php
+END
+process_incoming_requests.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/munialajuela/!svn/ver/144/branches/phase2/phone_campaigns.d/process_incoming_requests.php
+END
+call_file.template
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.d/call_file.template
+END
+phone_campaigns_daemon.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/munialajuela/!svn/ver/147/branches/phase2/phone_campaigns.d/phone_campaigns_daemon.php
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.d/INSTALL
+END
+call_file_templates.txt
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/munialajuela/!svn/ver/128/branches/phase2/phone_campaigns.d/call_file_templates.txt
+END
+logWrapper.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/munialajuela/!svn/ver/143/branches/phase2/phone_campaigns.d/logWrapper.php
+END
+config.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/munialajuela/!svn/ver/144/branches/phase2/phone_campaigns.d/config.php
+END
+sms_template.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/munialajuela/!svn/ver/142/branches/phase2/phone_campaigns.d/sms_template.txt
+END
